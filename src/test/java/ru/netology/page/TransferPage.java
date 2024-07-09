@@ -12,8 +12,8 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class TransferPage {
     public final SelenideElement transferHead = $ (byText("Пополнение карты"));
-    public final SelenideElement amountInput = $ ("[data-test-id='amount']");
-    public final SelenideElement fromInput = $ ("[data-test-id='to']");
+    public final SelenideElement amountInput = $ ("[data-test-id='amount' .input__control]");
+    public final SelenideElement fromInput = $ ("[data-test-id='from'] .input__control");
     public final SelenideElement transferButton = $ ("[data-test-id='action-transfer']");
     public final SelenideElement errorMessage = $ ("[data-test-id='error-notification'] .notification__content");
 
@@ -26,7 +26,7 @@ public class TransferPage {
     }
     public void makeTransfer(String amountToTransfer, DataHelper.CardInfo cardInfo) {
         amountInput.setValue(amountToTransfer);
-        fromInput.setValue(cardInfo.getCode());
+        fromInput.setValue(cardInfo.getCardNumber());
         transferButton.click();
     }
     public void findErrorMessage(String expectedText) {
