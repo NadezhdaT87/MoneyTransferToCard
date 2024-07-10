@@ -36,7 +36,7 @@ public class DashboardPage {
     public int extractBalance(String text) {
         var start = text.indexOf(balanceStart);
         var finish = text.indexOf(balanceFinish);
-        var value  = text.substring(start + balanceStart.length(), finish);
+        var value  = text.substring(start + balanceStart.length(), finish).replaceAll("[^0-9\\-]", "");
         return Integer.parseInt(value);
     }
 }
