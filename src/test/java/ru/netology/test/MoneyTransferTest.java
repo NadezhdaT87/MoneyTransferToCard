@@ -40,8 +40,8 @@ public class MoneyTransferTest {
         dashboardPage.reloadDashboardPage();
         var actualBalanceFirstCard = dashboardPage.getCardBalance(0);
         var actualBalanceSecondCard = dashboardPage.getCardBalance(1);
-        assertAll(() -> assertEquals(firstCardBalance, actualBalanceFirstCard),
-                () -> assertEquals(secondCardBalance, actualBalanceSecondCard));
+        assertAll(() -> assertEquals(expectedBalanceFirstCard, actualBalanceFirstCard),
+                () -> assertEquals(expectedBalanceSecondCard, actualBalanceSecondCard));
     }
 
     @Test
@@ -55,8 +55,8 @@ public class MoneyTransferTest {
         dashboardPage.reloadDashboardPage();
         var actualBalanceFirstCard = dashboardPage.getCardBalance(0);
         var actualBalanceSecondCard = dashboardPage.getCardBalance(1);
-        assertAll(() -> assertEquals(firstCardBalance, actualBalanceFirstCard),
-                () -> assertEquals(secondCardBalance, actualBalanceSecondCard));
+        assertAll(() -> assertEquals(expectedBalanceFirstCard, actualBalanceFirstCard),
+                () -> assertEquals(expectedBalanceSecondCard, actualBalanceSecondCard));
     }
 }
 
