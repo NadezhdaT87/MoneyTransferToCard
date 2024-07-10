@@ -11,11 +11,11 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
 public class TransferPage {
-    public final SelenideElement transferHead = $ (byText("Пополнение карты"));
-    public final SelenideElement amountInput = $ ("[data-test-id='amount' .input__control]");
+    public final SelenideElement amountInput = $ ("[data-test-id='amount'] .input__control");
     public final SelenideElement fromInput = $ ("[data-test-id='from'] .input__control");
     public final SelenideElement transferButton = $ ("[data-test-id='action-transfer']");
-    public final SelenideElement errorMessage = $ ("[data-test-id='error-notification'] .notification__content");
+    public final SelenideElement transferHead = $ (byText("Пополнение карты"));
+    public final SelenideElement errorMessage = $ ("[data-test-id='error-notification']");
 
     public TransferPage(){
         transferHead.shouldBe(visible);
